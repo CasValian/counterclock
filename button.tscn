@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://b1m1g65ahtsk2"]
+
+[ext_resource type="Script" uid="uid://bm8j05b1n7a4g" path="res://button.gd" id="1_r04n3"]
+[ext_resource type="Texture2D" uid="uid://ciqgpc8jym2r6" path="res://button_inactive.png" id="2_vxja4"]
+[ext_resource type="Texture2D" uid="uid://bw28x5kmp012y" path="res://button_active.png" id="3_lt4la"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n4tde"]
+
+[node name="button" type="Node2D" unique_id=1514796859]
+script = ExtResource("1_r04n3")
+
+[node name="active" type="Sprite2D" parent="." unique_id=1608871570]
+position = Vector2(3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.08593749, 0.078124985)
+texture = ExtResource("2_vxja4")
+
+[node name="inactive" type="Sprite2D" parent="." unique_id=1411562323]
+position = Vector2(3.8146973e-06, -0.4999962)
+scale = Vector2(0.08593749, 0.08203125)
+texture = ExtResource("3_lt4la")
+
+[node name="trigger" type="Area2D" parent="." unique_id=151000053]
+
+[node name="triggercollision" type="CollisionShape2D" parent="trigger" unique_id=1632347619]
+shape = SubResource("RectangleShape2D_n4tde")
+
+[connection signal="body_entered" from="trigger" to="." method="_on_trigger_body_entered"]

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://wd4p06wnv3e8"]
+
+[ext_resource type="Script" uid="uid://cfntieireak0u" path="res://checkpoint.gd" id="1_luqgl"]
+
+[node name="checkpoint" type="Node2D" unique_id=1119816251]
+script = ExtResource("1_luqgl")
+
+[node name="trigger" type="Area2D" parent="." unique_id=1969608625]
+
+[node name="shape" type="CollisionShape2D" parent="trigger" unique_id=287638432]
+
+[connection signal="body_entered" from="trigger" to="." method="_on_trigger_body_entered"]

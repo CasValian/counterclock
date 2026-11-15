@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dd138spna61pl"]
+
+[ext_resource type="Script" uid="uid://b833mogvgvc0u" path="res://appearingplatform.gd" id="1_hu67a"]
+[ext_resource type="Texture2D" uid="uid://dhsflbue6j1e6" path="res://icon.svg" id="2_6ih0f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_soge0"]
+size = Vector2(18, 16)
+
+[node name="appearing_platform" type="Node2D" unique_id=692419640]
+script = ExtResource("1_hu67a")
+
+[node name="platform" type="Sprite2D" parent="." unique_id=231446429]
+scale = Vector2(0.14062499, 0.124999985)
+texture = ExtResource("2_6ih0f")
+
+[node name="platformcollision" type="StaticBody2D" parent="." unique_id=404336984]
+
+[node name="collision" type="CollisionShape2D" parent="platformcollision" unique_id=353686742]
+shape = SubResource("RectangleShape2D_soge0")
